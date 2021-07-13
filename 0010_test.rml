@@ -16,11 +16,23 @@
       name: <<json.name>>
 
 - byName:
-  - GET: /Patient?given=<<given>>
+  - GET: /Patient?family=<<family>>
     foreach: <<name>>
+    
+- byName1:
+  - GET: /Patient?family=<<name.family>>
 
-- call:
-    - AllPatientsById
-    - byName
+
+# - call:
+#   - AllPatientsById
+#   - byName
+
+  
+- call: AllPatientsById
+  foreach: byName  
+        
+
+# - foreach: AllPatientsById
+#   call: byName
     
 
