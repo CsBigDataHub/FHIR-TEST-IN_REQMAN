@@ -1,0 +1,2132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title> 1/1</title>
+<meta name="description" content="reqman 3.0.4">
+<style>
+* { box-sizing: border-box;}
+.click {cursor:pointer}
+html,body {width:100%;height:100%;margin:0px;padding:0px}
+h3,h4 {padding:0px;margin:0px}
+h3 {color: blue;margin-top:22px;}
+h4 {padding:4px;background:#eee}
+h4:hover {background: linear-gradient(to right,#EEE,white) !important}
+h4 i {color:#AAA;font-weight: normal;font-size:0.9em}
+body {font-family: sans-serif;font-size:90%}
+pre {padding:4px;border:1px solid #CCC;max-height:300px;margin:2px;width:95%;display:block;overflow:auto;background:white}
+.OK {color:green}
+.KO {color:red}
+div.r {margin:4px;background: linear-gradient(#EEE,white);margin-left:10px}
+div.hide > div.h {background:white}
+div.hide > h4 {background:white}
+div.h {display:flex; flex-flow: row nowrap;padding-left:10px}
+div.h > div {flex: 1 0 50%}
+.nonp * {color:#888 !important;text-decoration: line-through;}
+.expanderContent   {
+    padding: 0;
+    max-height: 700px;
+    opacity: 1;
+    overflow-y: auto;
+    transition: 0.3s ease all;
+    padding:4px;
+    font-size:0.9em;
+}
+.hide .expanderContent {
+    max-height: 0;
+    opacity: 0;
+    padding:0px
+}
+
+.cc:before{
+  content:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAYAAADUryzEAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5AMVCjI2TjtqdwAAAKlJREFUOMvd1LEJAjEYxfHfSUC0EezcQRB7KxsXcABLwQlcwh0EwQGcwDEcwcLCVvG0SXVezlMLwQevSPj4f/keSaCPE+41/KSABVpYx3VK7RQgwxmzwn6qHvJojUJBJx71+sI3TMo6LSN5XzFKjgG26BYBzdhhrFo7jMpGEDPJ1FTDl/oTwFuhlQFWmH4KCDhE/yaDUHJNAzap5xtrhqncejjW+BcumMMD+Ycv+JwSPxAAAAAASUVORK5CYII=) ;
+  position:relative;
+  left:0px;
+  top:5px;
+ }
+
+.blinking{
+    animation:blinkingText .3s;
+}
+@keyframes blinkingText{
+    0%{     opacity: 1 }
+    60%{    opacity: 0 }
+    100%{   opacity: 1 }
+}
+
+</style>
+<script>
+function copyToClipboard( obj ) {
+    obj.classList.toggle("blinking")
+    setTimeout( function() {obj.classList.toggle("blinking")}, 300)
+    var str=obj.textContent;
+
+    const el = document.createElement('textarea');
+    el.value = str;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+};
+</script>
+</head>
+<body>
+<div class="h" style="position:sticky">
+    <div>
+        <span style="float:right;padding:4px"><b></b> 2021-07-12 23:28:26<br/>
+            <span style="float:right">1/1</span>
+        </span>
+    </div>
+</div>
+
+<div class="f">
+    <h3>File: 0010_test.rml</h3>
+
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient?given:exact=Winney,Rodrigo&amp;_pretty=true
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i>-Test created for &#039;http://hapi.fhir.org/baseR4/&#039;
+</i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient?given:exact=Winney,Rodrigo&amp;_pretty=true
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:22 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>X-Request-ID</b>: mYBE1z0XkzMWzRhW
+<b>Last-Modified</b>: Tue, 13 Jul 2021 04:28:22 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;entry&quot;: [
+        {
+            &quot;fullUrl&quot;: &quot;http://hapi.fhir.org/baseR4/Patient/1726996&quot;,
+            &quot;resource&quot;: {
+                &quot;birthDate&quot;: &quot;1991-08-21&quot;,
+                &quot;gender&quot;: &quot;male&quot;,
+                &quot;id&quot;: &quot;1726996&quot;,
+                &quot;identifier&quot;: [
+                    {
+                        &quot;system&quot;: &quot;https://www.policianacional.gov.py/&quot;,
+                        &quot;use&quot;: &quot;usual&quot;,
+                        &quot;value&quot;: &quot;3391416&quot;
+                    }
+                ],
+                &quot;maritalStatus&quot;: {
+                    &quot;coding&quot;: [
+                        {
+                            &quot;code&quot;: &quot;U&quot;,
+                            &quot;display&quot;: &quot;unmarried&quot;,
+                            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-MaritalStatus&quot;
+                        }
+                    ]
+                },
+                &quot;meta&quot;: {
+                    &quot;lastUpdated&quot;: &quot;2021-01-03T23:13:37.010+00:00&quot;,
+                    &quot;source&quot;: &quot;#T3HjfEkABEIM7JCT&quot;,
+                    &quot;versionId&quot;: &quot;1&quot;
+                },
+                &quot;name&quot;: [
+                    {
+                        &quot;_family&quot;: {
+                            &quot;extension&quot;: [
+                                {
+                                    &quot;url&quot;: &quot;http://hl7.org/fhir/StructureDefinition/humanname-fathers-family&quot;,
+                                    &quot;valueString&quot;: &quot;Santos&quot;
+                                }
+                            ]
+                        },
+                        &quot;given&quot;: [
+                            &quot;Rodrigo&quot;
+                        ]
+                    }
+                ],
+                &quot;resourceType&quot;: &quot;Patient&quot;,
+                &quot;text&quot;: {
+                    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;table&gt;&lt;tbody&gt; &lt;tr&gt;&lt;td&gt;Identificador&lt;/td&gt;&lt;td&gt;3391416&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Nombre&lt;/td&gt;&lt;td&gt;Rodrigo&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Apellido&lt;/td&gt;&lt;td&gt;Santos&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Genero&lt;/td&gt;&lt;td&gt;male&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Estado Civil&lt;/td&gt;&lt;td&gt;U&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Fecha Nacimiento&lt;/td&gt;&lt;td&gt;1991-08-21&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+                    &quot;status&quot;: &quot;generated&quot;
+                }
+            },
+            &quot;search&quot;: {
+                &quot;mode&quot;: &quot;match&quot;
+            }
+        },
+        {
+            &quot;fullUrl&quot;: &quot;http://hapi.fhir.org/baseR4/Patient/1718639&quot;,
+            &quot;resource&quot;: {
+                &quot;birthDate&quot;: &quot;1991-08-21&quot;,
+                &quot;gender&quot;: &quot;male&quot;,
+                &quot;id&quot;: &quot;1718639&quot;,
+                &quot;identifier&quot;: [
+                    {
+                        &quot;system&quot;: &quot;https://www.policianacional.gov.py/&quot;,
+                        &quot;use&quot;: &quot;usual&quot;,
+                        &quot;value&quot;: &quot;3136186&quot;
+                    }
+                ],
+                &quot;meta&quot;: {
+                    &quot;lastUpdated&quot;: &quot;2020-12-17T00:55:36.462+00:00&quot;,
+                    &quot;source&quot;: &quot;#TDvzpawYHDtuglUO&quot;,
+                    &quot;versionId&quot;: &quot;1&quot;
+                },
+                &quot;name&quot;: [
+                    {
+                        &quot;_family&quot;: {
+                            &quot;extension&quot;: [
+                                {
+                                    &quot;url&quot;: &quot;http://hl7.org/fhir/StructureDefinition/humanname-fathers-family&quot;,
+                                    &quot;valueString&quot;: &quot;Santos&quot;
+                                }
+                            ]
+                        },
+                        &quot;given&quot;: [
+                            &quot;Rodrigo&quot;
+                        ]
+                    }
+                ],
+                &quot;resourceType&quot;: &quot;Patient&quot;,
+                &quot;text&quot;: {
+                    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;table&gt;&lt;tbody&gt; &lt;tr&gt;&lt;td&gt;Identificador&lt;/td&gt;&lt;td&gt;3136186&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Nombre&lt;/td&gt;&lt;td&gt;Rodrigo&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Apellido&lt;/td&gt;&lt;td&gt;Santos&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Genero&lt;/td&gt;&lt;td&gt;male&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Fecha Nacimiento&lt;/td&gt;&lt;td&gt;1991-08-21&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+                    &quot;status&quot;: &quot;generated&quot;
+                }
+            },
+            &quot;search&quot;: {
+                &quot;mode&quot;: &quot;match&quot;
+            }
+        },
+        {
+            &quot;fullUrl&quot;: &quot;...***TRUNCATED***...              ],
+                &quot;id&quot;: &quot;2078613&quot;,
+                &quot;identifier&quot;: [
+                    {
+                        &quot;system&quot;: &quot;www.mypatientidentifier.com/ids&quot;,
+                        &quot;value&quot;: &quot;20210503&quot;
+                    }
+                ],
+                &quot;managingOrganization&quot;: {
+                    &quot;reference&quot;: &quot;Organization/2078612&quot;
+                },
+                &quot;meta&quot;: {
+                    &quot;lastUpdated&quot;: &quot;2021-05-03T17:07:36.583+00:00&quot;,
+                    &quot;source&quot;: &quot;#wgiph5OKCF3ujwaH&quot;,
+                    &quot;versionId&quot;: &quot;1&quot;
+                },
+                &quot;name&quot;: [
+                    {
+                        &quot;family&quot;: &quot;Costa&quot;,
+                        &quot;given&quot;: [
+                            &quot;Rodrigo&quot;
+                        ]
+                    }
+                ],
+                &quot;resourceType&quot;: &quot;Patient&quot;,
+                &quot;text&quot;: {
+                    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt; \n\t\t\t\t\t\tRodrigo Costa Id # 20210503\n\t\t\t\t\t&lt;/div&gt;&quot;,
+                    &quot;status&quot;: &quot;generated&quot;
+                }
+            },
+            &quot;search&quot;: {
+                &quot;mode&quot;: &quot;match&quot;
+            }
+        },
+        {
+            &quot;fullUrl&quot;: &quot;http://hapi.fhir.org/baseR4/Patient/2159395&quot;,
+            &quot;resource&quot;: {
+                &quot;birthDate&quot;: &quot;1981-06-06&quot;,
+                &quot;gender&quot;: &quot;male&quot;,
+                &quot;id&quot;: &quot;2159395&quot;,
+                &quot;identifier&quot;: [
+                    {
+                        &quot;system&quot;: &quot;http://clinfhir.com/fhir/NamingSystem/identifier&quot;,
+                        &quot;value&quot;: &quot;rodrigo.vicente&quot;
+                    }
+                ],
+                &quot;meta&quot;: {
+                    &quot;lastUpdated&quot;: &quot;2021-06-02T15:17:16.340+00:00&quot;,
+                    &quot;source&quot;: &quot;#Y2nR4PYCeStBAwIC&quot;,
+                    &quot;versionId&quot;: &quot;1&quot;
+                },
+                &quot;name&quot;: [
+                    {
+                        &quot;family&quot;: &quot;Vicente&quot;,
+                        &quot;given&quot;: [
+                            &quot;Rodrigo&quot;
+                        ],
+                        &quot;text&quot;: &quot;Rodrigo Vicente&quot;,
+                        &quot;use&quot;: &quot;official&quot;
+                    }
+                ],
+                &quot;resourceType&quot;: &quot;Patient&quot;,
+                &quot;text&quot;: {
+                    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;Rodrigo Vicente&lt;/div&gt;&quot;,
+                    &quot;status&quot;: &quot;generated&quot;
+                }
+            },
+            &quot;search&quot;: {
+                &quot;mode&quot;: &quot;match&quot;
+            }
+        },
+        {
+            &quot;fullUrl&quot;: &quot;http://hapi.fhir.org/baseR4/Patient/2367842&quot;,
+            &quot;resource&quot;: {
+                &quot;id&quot;: &quot;2367842&quot;,
+                &quot;meta&quot;: {
+                    &quot;lastUpdated&quot;: &quot;2021-06-24T11:23:34.269+00:00&quot;,
+                    &quot;source&quot;: &quot;#ZIh9e6nzLt7HOhOt&quot;,
+                    &quot;versionId&quot;: &quot;1&quot;
+                },
+                &quot;name&quot;: [
+                    {
+                        &quot;family&quot;: &quot;Jhone&quot;,
+                        &quot;given&quot;: [
+                            &quot;Winney&quot;,
+                            &quot;Rodrigo&quot;
+                        ]
+                    }
+                ],
+                &quot;resourceType&quot;: &quot;Patient&quot;,
+                &quot;text&quot;: {
+                    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;Winney Rodrigo &lt;b&gt;JHONE &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody/&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+                    &quot;status&quot;: &quot;generated&quot;
+                }
+            },
+            &quot;search&quot;: {
+                &quot;mode&quot;: &quot;match&quot;
+            }
+        }
+    ],
+    &quot;id&quot;: &quot;7e3846ce-5873-4d92-b61b-27a820a273df&quot;,
+    &quot;link&quot;: [
+        {
+            &quot;relation&quot;: &quot;self&quot;,
+            &quot;url&quot;: &quot;http://hapi.fhir.org/baseR4/Patient?_pretty=true&amp;given%3Aexact=Winney%2CRodrigo&quot;
+        },
+        {
+            &quot;relation&quot;: &quot;next&quot;,
+            &quot;url&quot;: &quot;http://hapi.fhir.org/baseR4?_getpages=7e3846ce-5873-4d92-b61b-27a820a273df&amp;_getpagesoffset=20&amp;_count=20&amp;_pretty=true&amp;_bundletype=searchset&quot;
+        }
+    ],
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-07-13T04:28:22.278+00:00&quot;
+    },
+    &quot;resourceType&quot;: &quot;Bundle&quot;,
+    &quot;total&quot;: 213,
+    &quot;type&quot;: &quot;searchset&quot;
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+            <li class="OK" title="200">OK : status = 200</li>
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient?given=Winney,Rodrigo&amp;_pretty=true
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient?given=Winney,Rodrigo&amp;_pretty=true
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:23 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>X-Request-ID</b>: 9ZQfxKhqOO1A59qH
+<b>Last-Modified</b>: Tue, 13 Jul 2021 04:28:22 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;entry&quot;: [
+        {
+            &quot;fullUrl&quot;: &quot;http://hapi.fhir.org/baseR4/Patient/1726996&quot;,
+            &quot;resource&quot;: {
+                &quot;birthDate&quot;: &quot;1991-08-21&quot;,
+                &quot;gender&quot;: &quot;male&quot;,
+                &quot;id&quot;: &quot;1726996&quot;,
+                &quot;identifier&quot;: [
+                    {
+                        &quot;system&quot;: &quot;https://www.policianacional.gov.py/&quot;,
+                        &quot;use&quot;: &quot;usual&quot;,
+                        &quot;value&quot;: &quot;3391416&quot;
+                    }
+                ],
+                &quot;maritalStatus&quot;: {
+                    &quot;coding&quot;: [
+                        {
+                            &quot;code&quot;: &quot;U&quot;,
+                            &quot;display&quot;: &quot;unmarried&quot;,
+                            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-MaritalStatus&quot;
+                        }
+                    ]
+                },
+                &quot;meta&quot;: {
+                    &quot;lastUpdated&quot;: &quot;2021-01-03T23:13:37.010+00:00&quot;,
+                    &quot;source&quot;: &quot;#T3HjfEkABEIM7JCT&quot;,
+                    &quot;versionId&quot;: &quot;1&quot;
+                },
+                &quot;name&quot;: [
+                    {
+                        &quot;_family&quot;: {
+                            &quot;extension&quot;: [
+                                {
+                                    &quot;url&quot;: &quot;http://hl7.org/fhir/StructureDefinition/humanname-fathers-family&quot;,
+                                    &quot;valueString&quot;: &quot;Santos&quot;
+                                }
+                            ]
+                        },
+                        &quot;given&quot;: [
+                            &quot;Rodrigo&quot;
+                        ]
+                    }
+                ],
+                &quot;resourceType&quot;: &quot;Patient&quot;,
+                &quot;text&quot;: {
+                    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;table&gt;&lt;tbody&gt; &lt;tr&gt;&lt;td&gt;Identificador&lt;/td&gt;&lt;td&gt;3391416&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Nombre&lt;/td&gt;&lt;td&gt;Rodrigo&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Apellido&lt;/td&gt;&lt;td&gt;Santos&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Genero&lt;/td&gt;&lt;td&gt;male&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Estado Civil&lt;/td&gt;&lt;td&gt;U&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Fecha Nacimiento&lt;/td&gt;&lt;td&gt;1991-08-21&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+                    &quot;status&quot;: &quot;generated&quot;
+                }
+            },
+            &quot;search&quot;: {
+                &quot;mode&quot;: &quot;match&quot;
+            }
+        },
+        {
+            &quot;fullUrl&quot;: &quot;http://hapi.fhir.org/baseR4/Patient/1718639&quot;,
+            &quot;resource&quot;: {
+                &quot;birthDate&quot;: &quot;1991-08-21&quot;,
+                &quot;gender&quot;: &quot;male&quot;,
+                &quot;id&quot;: &quot;1718639&quot;,
+                &quot;identifier&quot;: [
+                    {
+                        &quot;system&quot;: &quot;https://www.policianacional.gov.py/&quot;,
+                        &quot;use&quot;: &quot;usual&quot;,
+                        &quot;value&quot;: &quot;3136186&quot;
+                    }
+                ],
+                &quot;meta&quot;: {
+                    &quot;lastUpdated&quot;: &quot;2020-12-17T00:55:36.462+00:00&quot;,
+                    &quot;source&quot;: &quot;#TDvzpawYHDtuglUO&quot;,
+                    &quot;versionId&quot;: &quot;1&quot;
+                },
+                &quot;name&quot;: [
+                    {
+                        &quot;_family&quot;: {
+                            &quot;extension&quot;: [
+                                {
+                                    &quot;url&quot;: &quot;http://hl7.org/fhir/StructureDefinition/humanname-fathers-family&quot;,
+                                    &quot;valueString&quot;: &quot;Santos&quot;
+                                }
+                            ]
+                        },
+                        &quot;given&quot;: [
+                            &quot;Rodrigo&quot;
+                        ]
+                    }
+                ],
+                &quot;resourceType&quot;: &quot;Patient&quot;,
+                &quot;text&quot;: {
+                    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;table&gt;&lt;tbody&gt; &lt;tr&gt;&lt;td&gt;Identificador&lt;/td&gt;&lt;td&gt;3136186&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Nombre&lt;/td&gt;&lt;td&gt;Rodrigo&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Apellido&lt;/td&gt;&lt;td&gt;Santos&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Genero&lt;/td&gt;&lt;td&gt;male&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Fecha Nacimiento&lt;/td&gt;&lt;td&gt;1991-08-21&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+                    &quot;status&quot;: &quot;generated&quot;
+                }
+            },
+            &quot;search&quot;: {
+                &quot;mode&quot;: &quot;match&quot;
+            }
+        },
+        {
+            &quot;fullUrl&quot;: &quot;...***TRUNCATED***...                },
+                        &quot;value&quot;: &quot;999-25-9030&quot;
+                    },
+                    {
+                        &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.4.3.25&quot;,
+                        &quot;type&quot;: {
+                            &quot;coding&quot;: [
+                                {
+                                    &quot;code&quot;: &quot;DL&quot;,
+                                    &quot;display&quot;: &quot;Driver&#039;s License&quot;,
+                                    &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0203&quot;
+                                }
+                            ],
+                            &quot;text&quot;: &quot;Driver&#039;s License&quot;
+                        },
+                        &quot;value&quot;: &quot;S99914214&quot;
+                    },
+                    {
+                        &quot;system&quot;: &quot;http://standardhealthrecord.org/fhir/StructureDefinition/passportNumber&quot;,
+                        &quot;type&quot;: {
+                            &quot;coding&quot;: [
+                                {
+                                    &quot;code&quot;: &quot;PPN&quot;,
+                                    &quot;display&quot;: &quot;Passport Number&quot;,
+                                    &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0203&quot;
+                                }
+                            ],
+                            &quot;text&quot;: &quot;Passport Number&quot;
+                        },
+                        &quot;value&quot;: &quot;X63644358X&quot;
+                    }
+                ],
+                &quot;maritalStatus&quot;: {
+                    &quot;coding&quot;: [
+                        {
+                            &quot;code&quot;: &quot;M&quot;,
+                            &quot;display&quot;: &quot;M&quot;,
+                            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-MaritalStatus&quot;
+                        }
+                    ],
+                    &quot;text&quot;: &quot;M&quot;
+                },
+                &quot;meta&quot;: {
+                    &quot;lastUpdated&quot;: &quot;2020-03-25T00:34:37.527+00:00&quot;,
+                    &quot;profile&quot;: [
+                        &quot;http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient&quot;
+                    ],
+                    &quot;source&quot;: &quot;#oKykvOtGUr0QCE9z&quot;,
+                    &quot;tag&quot;: [
+                        {
+                            &quot;code&quot;: &quot;Covid19 synthetic population from Synthea&quot;,
+                            &quot;system&quot;: &quot;https://smarthealthit.org/tags&quot;
+                        }
+                    ],
+                    &quot;versionId&quot;: &quot;1&quot;
+                },
+                &quot;multipleBirthBoolean&quot;: false,
+                &quot;name&quot;: [
+                    {
+                        &quot;family&quot;: &quot;Aufderhar910&quot;,
+                        &quot;given&quot;: [
+                            &quot;Rodrigo242&quot;
+                        ],
+                        &quot;prefix&quot;: [
+                            &quot;Mr.&quot;
+                        ],
+                        &quot;use&quot;: &quot;official&quot;
+                    }
+                ],
+                &quot;resourceType&quot;: &quot;Patient&quot;,
+                &quot;telecom&quot;: [
+                    {
+                        &quot;system&quot;: &quot;phone&quot;,
+                        &quot;use&quot;: &quot;home&quot;,
+                        &quot;value&quot;: &quot;555-266-3852&quot;
+                    }
+                ],
+                &quot;text&quot;: {
+                    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;Generated by &lt;a href=\&quot;https://github.com/synthetichealth/synthea\&quot;&gt;Synthea&lt;/a&gt;.Version identifier: 7ff8db58\n .   Person seed: -2482615172316893454  Population seed: 12345&lt;/div&gt;&quot;,
+                    &quot;status&quot;: &quot;generated&quot;
+                }
+            },
+            &quot;search&quot;: {
+                &quot;mode&quot;: &quot;match&quot;
+            }
+        }
+    ],
+    &quot;id&quot;: &quot;3a1f1344-d8b1-41ba-a9d4-36f32b870412&quot;,
+    &quot;link&quot;: [
+        {
+            &quot;relation&quot;: &quot;self&quot;,
+            &quot;url&quot;: &quot;http://hapi.fhir.org/baseR4/Patient?_pretty=true&amp;given=Winney%2CRodrigo&quot;
+        },
+        {
+            &quot;relation&quot;: &quot;next&quot;,
+            &quot;url&quot;: &quot;http://hapi.fhir.org/baseR4?_getpages=3a1f1344-d8b1-41ba-a9d4-36f32b870412&amp;_getpagesoffset=20&amp;_count=20&amp;_pretty=true&amp;_bundletype=searchset&quot;
+        }
+    ],
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-07-13T04:28:22.637+00:00&quot;
+    },
+    &quot;resourceType&quot;: &quot;Bundle&quot;,
+    &quot;total&quot;: 218,
+    &quot;type&quot;: &quot;searchset&quot;
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/1726996
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/1726996
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:23 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: sEvHWkV4V48TFjOa
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/1726996/_history/1
+<b>Last-Modified</b>: Sun, 03 Jan 2021 23:13:37 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;birthDate&quot;: &quot;1991-08-21&quot;,
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;id&quot;: &quot;1726996&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;system&quot;: &quot;https://www.policianacional.gov.py/&quot;,
+            &quot;use&quot;: &quot;usual&quot;,
+            &quot;value&quot;: &quot;3391416&quot;
+        }
+    ],
+    &quot;maritalStatus&quot;: {
+        &quot;coding&quot;: [
+            {
+                &quot;code&quot;: &quot;U&quot;,
+                &quot;display&quot;: &quot;unmarried&quot;,
+                &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-MaritalStatus&quot;
+            }
+        ]
+    },
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-01-03T23:13:37.010+00:00&quot;,
+        &quot;source&quot;: &quot;#T3HjfEkABEIM7JCT&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;_family&quot;: {
+                &quot;extension&quot;: [
+                    {
+                        &quot;url&quot;: &quot;http://hl7.org/fhir/StructureDefinition/humanname-fathers-family&quot;,
+                        &quot;valueString&quot;: &quot;Santos&quot;
+                    }
+                ]
+            },
+            &quot;given&quot;: [
+                &quot;Rodrigo&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;table&gt;&lt;tbody&gt; &lt;tr&gt;&lt;td&gt;Identificador&lt;/td&gt;&lt;td&gt;3391416&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Nombre&lt;/td&gt;&lt;td&gt;Rodrigo&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Apellido&lt;/td&gt;&lt;td&gt;Santos&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Genero&lt;/td&gt;&lt;td&gt;male&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Estado Civil&lt;/td&gt;&lt;td&gt;U&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Fecha Nacimiento&lt;/td&gt;&lt;td&gt;1991-08-21&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/1718639
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/1718639
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:23 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: xfHOHNNlrsdAkf4o
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/1718639/_history/1
+<b>Last-Modified</b>: Thu, 17 Dec 2020 00:55:36 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;birthDate&quot;: &quot;1991-08-21&quot;,
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;id&quot;: &quot;1718639&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;system&quot;: &quot;https://www.policianacional.gov.py/&quot;,
+            &quot;use&quot;: &quot;usual&quot;,
+            &quot;value&quot;: &quot;3136186&quot;
+        }
+    ],
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2020-12-17T00:55:36.462+00:00&quot;,
+        &quot;source&quot;: &quot;#TDvzpawYHDtuglUO&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;_family&quot;: {
+                &quot;extension&quot;: [
+                    {
+                        &quot;url&quot;: &quot;http://hl7.org/fhir/StructureDefinition/humanname-fathers-family&quot;,
+                        &quot;valueString&quot;: &quot;Santos&quot;
+                    }
+                ]
+            },
+            &quot;given&quot;: [
+                &quot;Rodrigo&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;table&gt;&lt;tbody&gt; &lt;tr&gt;&lt;td&gt;Identificador&lt;/td&gt;&lt;td&gt;3136186&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Nombre&lt;/td&gt;&lt;td&gt;Rodrigo&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Apellido&lt;/td&gt;&lt;td&gt;Santos&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Genero&lt;/td&gt;&lt;td&gt;male&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Fecha Nacimiento&lt;/td&gt;&lt;td&gt;1991-08-21&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/1718642
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/1718642
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:23 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: MH7ynAAcHrmv6KWl
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/1718642/_history/1
+<b>Last-Modified</b>: Thu, 17 Dec 2020 01:02:24 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;birthDate&quot;: &quot;1991-08-21&quot;,
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;id&quot;: &quot;1718642&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;system&quot;: &quot;https://www.policianacional.gov.py/&quot;,
+            &quot;use&quot;: &quot;usual&quot;,
+            &quot;value&quot;: &quot;3136186&quot;
+        }
+    ],
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2020-12-17T01:02:24.196+00:00&quot;,
+        &quot;source&quot;: &quot;#UZ4fmElVIZBkzI0L&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;_family&quot;: {
+                &quot;extension&quot;: [
+                    {
+                        &quot;url&quot;: &quot;http://hl7.org/fhir/StructureDefinition/humanname-fathers-family&quot;,
+                        &quot;valueString&quot;: &quot;Santos&quot;
+                    }
+                ]
+            },
+            &quot;given&quot;: [
+                &quot;Rodrigo&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;table&gt;&lt;tbody&gt; &lt;tr&gt;&lt;td&gt;Identificador&lt;/td&gt;&lt;td&gt;3136186&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Nombre&lt;/td&gt;&lt;td&gt;Rodrigo&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Apellido&lt;/td&gt;&lt;td&gt;Santos&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Genero&lt;/td&gt;&lt;td&gt;male&lt;/td&gt;&lt;/tr&gt;        &lt;tr&gt;&lt;td&gt;Fecha Nacimiento&lt;/td&gt;&lt;td&gt;1991-08-21&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/1703637
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/1703637
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:23 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: GLjRP23Vsi8jhwcS
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/1703637/_history/1
+<b>Last-Modified</b>: Sat, 05 Dec 2020 14:09:16 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;_gender&quot;: {
+        &quot;fhir_comments&quot;: [
+            &quot;    use FHIR code system for male / female    &quot;
+        ]
+    },
+    &quot;active&quot;: true,
+    &quot;birthDate&quot;: &quot;1976-09-10&quot;,
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;id&quot;: &quot;1703637&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;system&quot;: &quot;urn:oid:1.2.36.146.595.217.0.1&quot;,
+            &quot;use&quot;: &quot;usual&quot;,
+            &quot;value&quot;: &quot;1297458-8&quot;
+        }
+    ],
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2020-12-05T14:09:16.361+00:00&quot;,
+        &quot;source&quot;: &quot;#gxGRxlBFz4GtCJMg&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Muñoz&quot;,
+            &quot;fhir_comments&quot;: [
+                &quot;   Rodrigo Muñoz   &quot;
+            ],
+            &quot;given&quot;: [
+                &quot;Rodrigo&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;Rodrigo &lt;b&gt;MUÑOZ &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Identifier&lt;/td&gt;&lt;td&gt;1297458-8&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;10 September 1976&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/1919127
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/1919127
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:24 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: zk7Psnuh2s0Mr00v
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/1919127/_history/1
+<b>Last-Modified</b>: Mon, 01 Mar 2021 15:42:56 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;id&quot;: &quot;1919127&quot;,
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-03-01T15:42:56.212+00:00&quot;,
+        &quot;source&quot;: &quot;#HZBS9FnOXNgoJPE8&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Jhone&quot;,
+            &quot;given&quot;: [
+                &quot;Winney&quot;,
+                &quot;Rodrigo&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;Winney Rodrigo &lt;b&gt;JHONE &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody/&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/1919132
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/1919132
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:24 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: h6Ljm2iejXQp1rx3
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/1919132/_history/1
+<b>Last-Modified</b>: Mon, 01 Mar 2021 15:43:18 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;id&quot;: &quot;1919132&quot;,
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-03-01T15:43:18.756+00:00&quot;,
+        &quot;source&quot;: &quot;#rX17EaaoKCYvuCv4&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Jhone&quot;,
+            &quot;given&quot;: [
+                &quot;Winney&quot;,
+                &quot;Rodrigo&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;Winney Rodrigo &lt;b&gt;JHONE &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody/&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/1919144
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/1919144
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:24 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: 1JO9PnoJi0FR7zV3
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/1919144/_history/1
+<b>Last-Modified</b>: Mon, 01 Mar 2021 15:44:14 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;id&quot;: &quot;1919144&quot;,
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-03-01T15:44:14.151+00:00&quot;,
+        &quot;source&quot;: &quot;#sfDQKOFeGWuwOvDu&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Jhone&quot;,
+            &quot;given&quot;: [
+                &quot;Winney&quot;,
+                &quot;Rodrigo&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;Winney Rodrigo &lt;b&gt;JHONE &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody/&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/1962751
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/1962751
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:24 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: tiwZ3R0twhsAvhUs
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/1962751/_history/1
+<b>Last-Modified</b>: Sun, 21 Mar 2021 13:45:40 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;id&quot;: &quot;1962751&quot;,
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-03-21T13:45:40.682+00:00&quot;,
+        &quot;source&quot;: &quot;#VVEjqjVeggUfjBwE&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Jhone1&quot;,
+            &quot;given&quot;: [
+                &quot;Winney&quot;,
+                &quot;Rodrigo11111111&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;Winney Rodrigo11111111 &lt;b&gt;JHONE1 &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody/&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/1979105
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/1979105
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:24 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: GH88GJiAKwTsaosq
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/1979105/_history/1
+<b>Last-Modified</b>: Tue, 30 Mar 2021 12:59:00 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;id&quot;: &quot;1979105&quot;,
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-03-30T12:59:00.726+00:00&quot;,
+        &quot;source&quot;: &quot;#mmqI2PtVIBHJuA6R&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Jhone&quot;,
+            &quot;given&quot;: [
+                &quot;Winney&quot;,
+                &quot;Rodrigo&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;Winney Rodrigo &lt;b&gt;JHONE &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody/&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/1979109
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/1979109
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:24 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: EIIfUGksEbLSaflR
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/1979109/_history/1
+<b>Last-Modified</b>: Tue, 30 Mar 2021 13:04:58 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;id&quot;: &quot;1979109&quot;,
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-03-30T13:04:58.225+00:00&quot;,
+        &quot;source&quot;: &quot;#nYkJWlsafa1GxTcD&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Jhone&quot;,
+            &quot;given&quot;: [
+                &quot;Winney&quot;,
+                &quot;Rodrigo&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;Winney Rodrigo &lt;b&gt;JHONE &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody/&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/2068620
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/2068620
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:25 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: AObcRJxQJU9HDNtu
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/2068620/_history/1
+<b>Last-Modified</b>: Tue, 27 Apr 2021 13:53:49 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;birthDate&quot;: &quot;1999&quot;,
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;id&quot;: &quot;2068620&quot;,
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-04-27T13:53:49.327+00:00&quot;,
+        &quot;source&quot;: &quot;#6FilFQwA180JoxXJ&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Carbajo&quot;,
+            &quot;given&quot;: [
+                &quot;Rodrigo&quot;
+            ],
+            &quot;use&quot;: &quot;official&quot;
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt; Narrativa del paciente&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;additional&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/2068645
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/2068645
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:25 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: 7bQH4T9fCUcUIuYg
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/2068645/_history/1
+<b>Last-Modified</b>: Tue, 27 Apr 2021 14:00:23 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;birthDate&quot;: &quot;1999&quot;,
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;id&quot;: &quot;2068645&quot;,
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-04-27T14:00:23.518+00:00&quot;,
+        &quot;source&quot;: &quot;#RBjJv84F7Gr1M3Oo&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Carbajo&quot;,
+            &quot;given&quot;: [
+                &quot;Rodrigo&quot;
+            ],
+            &quot;use&quot;: &quot;official&quot;
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt; Narrativa del paciente&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;additional&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/2078352
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/2078352
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:25 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: zfNMnVVLtLUU5xNy
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/2078352/_history/1
+<b>Last-Modified</b>: Mon, 03 May 2021 12:06:05 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;active&quot;: true,
+    &quot;address&quot;: [
+        {
+            &quot;city&quot;: &quot;São Paulo&quot;,
+            &quot;country&quot;: &quot;Brasil&quot;,
+            &quot;line&quot;: [
+                &quot;Rua dos Pinheiros, 1673&quot;
+            ],
+            &quot;postalCode&quot;: &quot;05422-012&quot;,
+            &quot;use&quot;: &quot;work&quot;
+        }
+    ],
+    &quot;id&quot;: &quot;2078352&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;system&quot;: &quot;www.mypatientidentifier.com/ids&quot;,
+            &quot;use&quot;: &quot;temp&quot;,
+            &quot;value&quot;: &quot;20210502&quot;
+        }
+    ],
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-05-03T12:06:05.556+00:00&quot;,
+        &quot;source&quot;: &quot;#TDK2XEyXsDfAiTH2&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Costa&quot;,
+            &quot;given&quot;: [
+                &quot;Rodrigo&quot;
+            ],
+            &quot;text&quot;: &quot;Rodrigo Costa Id # 20210502&quot;,
+            &quot;use&quot;: &quot;official&quot;
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;Rodrigo &lt;b&gt;COSTA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Identifier&lt;/td&gt;&lt;td&gt;20210502&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Address&lt;/td&gt;&lt;td&gt;&lt;span&gt;Rua dos Pinheiros, 1673 &lt;/span&gt;&lt;br/&gt;&lt;span&gt;São Paulo &lt;/span&gt;&lt;span&gt;Brasil &lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/2078401
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/2078401
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:25 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: dGky4si1Rd82vmtY
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/2078401/_history/1
+<b>Last-Modified</b>: Mon, 03 May 2021 12:23:27 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;address&quot;: [
+        {
+            &quot;city&quot;: &quot;São Paulo&quot;,
+            &quot;country&quot;: &quot;Brasil&quot;,
+            &quot;line&quot;: [
+                &quot;Rua dos Pinheiros, 1673&quot;
+            ],
+            &quot;state&quot;: &quot;SP&quot;
+        }
+    ],
+    &quot;id&quot;: &quot;2078401&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;system&quot;: &quot;www.mypatientidentifier.com/ids&quot;,
+            &quot;value&quot;: &quot;20210502&quot;
+        }
+    ],
+    &quot;managingOrganization&quot;: {
+        &quot;reference&quot;: &quot;Organization/2078400&quot;
+    },
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-05-03T12:23:27.408+00:00&quot;,
+        &quot;source&quot;: &quot;#7ENolWFd34wytVVo&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Costa&quot;,
+            &quot;given&quot;: [
+                &quot;Rodrigo&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt; \n\t\t\t\t\t\tRodrigo Costa Id # 20210502\n\t\t\t\t\t&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/2078460
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/2078460
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:25 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: a5TPv9yrkYb6pzjs
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/2078460/_history/1
+<b>Last-Modified</b>: Mon, 03 May 2021 13:02:56 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;address&quot;: [
+        {
+            &quot;city&quot;: &quot;São Paulo&quot;,
+            &quot;country&quot;: &quot;Brasil&quot;,
+            &quot;line&quot;: [
+                &quot;Rua dos Pinheiros, 1673&quot;
+            ],
+            &quot;state&quot;: &quot;SP&quot;
+        }
+    ],
+    &quot;id&quot;: &quot;2078460&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;system&quot;: &quot;www.mypatientidentifier.com/ids&quot;,
+            &quot;value&quot;: &quot;20210502&quot;
+        }
+    ],
+    &quot;managingOrganization&quot;: {
+        &quot;reference&quot;: &quot;Organization/2078400&quot;
+    },
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-05-03T13:02:56.987+00:00&quot;,
+        &quot;source&quot;: &quot;#kvoFkQhiaVoDAgVn&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Costa&quot;,
+            &quot;given&quot;: [
+                &quot;Rodrigo&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt; \n\t\t\t\t\t\tRodrigo Costa Id # 20210502\n\t\t\t\t\t&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/2078465
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/2078465
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:25 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;2&quot;
+<b>X-Request-ID</b>: 8cS9Mgnqn8rXd4Z8
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/2078465/_history/2
+<b>Last-Modified</b>: Sat, 22 May 2021 21:29:19 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;address&quot;: [
+        {
+            &quot;city&quot;: &quot;São Paulo&quot;,
+            &quot;country&quot;: &quot;Brasil&quot;,
+            &quot;line&quot;: [
+                &quot;Rua dos Pinheiros, 1673&quot;
+            ],
+            &quot;state&quot;: &quot;SP&quot;
+        }
+    ],
+    &quot;extension&quot;: [
+        {
+            &quot;url&quot;: &quot;http://hapi.fhir.org/baseR4/StructureDefinition/CategoriaPaciente&quot;,
+            &quot;valueCode&quot;: &quot;F&quot;
+        }
+    ],
+    &quot;id&quot;: &quot;2078465&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;system&quot;: &quot;www.mypatientidentifier.com/ids&quot;,
+            &quot;value&quot;: &quot;20210502&quot;
+        }
+    ],
+    &quot;managingOrganization&quot;: {
+        &quot;reference&quot;: &quot;Organization/2078400&quot;
+    },
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-05-22T21:29:19.401+00:00&quot;,
+        &quot;source&quot;: &quot;#GlcnGKJCSIUg4OlF&quot;,
+        &quot;versionId&quot;: &quot;2&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Costa&quot;,
+            &quot;given&quot;: [
+                &quot;Rodrigo&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt; \n\t\t\t\t\t\tRodrigo Costa Id # 20210502\n\t\t\t\t\t&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/2078558
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/2078558
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:25 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: UsLvCPdMFOMMSenq
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/2078558/_history/1
+<b>Last-Modified</b>: Mon, 03 May 2021 15:50:02 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;birthDate&quot;: &quot;1999&quot;,
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;id&quot;: &quot;2078558&quot;,
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-05-03T15:50:02.905+00:00&quot;,
+        &quot;source&quot;: &quot;#7JOllJpmG7pIJduo&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Carbajo&quot;,
+            &quot;given&quot;: [
+                &quot;Rodrigo&quot;
+            ],
+            &quot;use&quot;: &quot;official&quot;
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt; Narrativa del paciente&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;additional&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/2078613
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/2078613
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:25 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: Awohbes22dfjm1ma
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/2078613/_history/1
+<b>Last-Modified</b>: Mon, 03 May 2021 17:07:36 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;address&quot;: [
+        {
+            &quot;city&quot;: &quot;São Paulo&quot;,
+            &quot;country&quot;: &quot;Brasil&quot;,
+            &quot;line&quot;: [
+                &quot;Rua dos Pinheiros, 1673&quot;
+            ],
+            &quot;state&quot;: &quot;SP&quot;
+        }
+    ],
+    &quot;id&quot;: &quot;2078613&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;system&quot;: &quot;www.mypatientidentifier.com/ids&quot;,
+            &quot;value&quot;: &quot;20210503&quot;
+        }
+    ],
+    &quot;managingOrganization&quot;: {
+        &quot;reference&quot;: &quot;Organization/2078612&quot;
+    },
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-05-03T17:07:36.583+00:00&quot;,
+        &quot;source&quot;: &quot;#wgiph5OKCF3ujwaH&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Costa&quot;,
+            &quot;given&quot;: [
+                &quot;Rodrigo&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt; \n\t\t\t\t\t\tRodrigo Costa Id # 20210503\n\t\t\t\t\t&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/2159395
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/2159395
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:26 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: S2vRcBFMLY2Ptong
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/2159395/_history/1
+<b>Last-Modified</b>: Wed, 02 Jun 2021 15:17:16 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;birthDate&quot;: &quot;1981-06-06&quot;,
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;id&quot;: &quot;2159395&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;system&quot;: &quot;http://clinfhir.com/fhir/NamingSystem/identifier&quot;,
+            &quot;value&quot;: &quot;rodrigo.vicente&quot;
+        }
+    ],
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-06-02T15:17:16.340+00:00&quot;,
+        &quot;source&quot;: &quot;#Y2nR4PYCeStBAwIC&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Vicente&quot;,
+            &quot;given&quot;: [
+                &quot;Rodrigo&quot;
+            ],
+            &quot;text&quot;: &quot;Rodrigo Vicente&quot;,
+            &quot;use&quot;: &quot;official&quot;
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;Rodrigo Vicente&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient/2367842
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient/2367842
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:26 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>Etag</b>: W/&quot;1&quot;
+<b>X-Request-ID</b>: imXWXNM5QcZKTZHK
+<b>Content-Location</b>: http://hapi.fhir.org/baseR4/Patient/2367842/_history/1
+<b>Last-Modified</b>: Thu, 24 Jun 2021 11:23:34 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;id&quot;: &quot;2367842&quot;,
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-06-24T11:23:34.269+00:00&quot;,
+        &quot;source&quot;: &quot;#ZIh9e6nzLt7HOhOt&quot;,
+        &quot;versionId&quot;: &quot;1&quot;
+    },
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Jhone&quot;,
+            &quot;given&quot;: [
+                &quot;Winney&quot;,
+                &quot;Rodrigo&quot;
+            ]
+        }
+    ],
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;text&quot;: {
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;Winney Rodrigo &lt;b&gt;JHONE &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody/&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+        &quot;status&quot;: &quot;generated&quot;
+    }
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+    <div class="r hide">
+        <h4 class="click" onclick="this.parentElement.classList.toggle('hide')" title="Click to show/hide details">
+            <b>GET</b>
+            http://hapi.fhir.org/baseR4/Patient?given=[&quot;Winney&quot;, &quot;Rodrigo&quot;]
+            <b style="float:right">
+                    200
+            </b>
+            <br/>
+            <i></i>
+
+        </h4>
+
+<div class="h s expanderContent"><a class="cc click" onclick="copyToClipboard( this.parentNode )" title="copy"></a>
+    <div style="width:50%">
+<pre>
+GET http://hapi.fhir.org/baseR4/Patient?given=[&quot;Winney&quot;, &quot;Rodrigo&quot;]
+<b>User-Agent</b>: reqman (https://github.com/manatlan/reqman)
+</pre>
+--> HTTP/1.1 200 OK
+
+<pre>
+<b>Server</b>: nginx/1.18.0 (Ubuntu)
+<b>Date</b>: Tue, 13 Jul 2021 04:28:26 GMT
+<b>Content-Type</b>: application/fhir+json;charset=utf-8
+<b>Transfer-Encoding</b>: chunked
+<b>Connection</b>: keep-alive
+<b>X-Powered-By</b>: HAPI FHIR 5.5.0-PRE1-SNAPSHOT/1703568840/2021-05-28 REST Server (FHIR Server; FHIR 4.0.1/R4)
+<b>X-Request-ID</b>: vyNmnmxdVjNvtjfR
+<b>Last-Modified</b>: Tue, 13 Jul 2021 04:28:26 GMT
+<b>Content-Encoding</b>: gzip
+{
+    &quot;id&quot;: &quot;77c4bc4f-2d1c-4c08-bdce-4f1b0e0ec9ca&quot;,
+    &quot;link&quot;: [
+        {
+            &quot;relation&quot;: &quot;self&quot;,
+            &quot;url&quot;: &quot;http://hapi.fhir.org/baseR4/Patient?given=%5B%22Winney%22%2C%20%22Rodrigo%22%5D&quot;
+        }
+    ],
+    &quot;meta&quot;: {
+        &quot;lastUpdated&quot;: &quot;2021-07-13T04:28:26.277+00:00&quot;
+    },
+    &quot;resourceType&quot;: &quot;Bundle&quot;,
+    &quot;total&quot;: 0,
+    &quot;type&quot;: &quot;searchset&quot;
+}</pre>
+    </div>
+</div>
+
+
+
+<div class="h">
+    <div style="width:50%" class="False">
+    </div>
+</div>
+
+    </div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+- GET: /Patient?given:exact=Winney,Rodrigo&_pretty=true
+  doc: |
+    -Test created for 'http://hapi.fhir.org/baseR4/'
+  tests:
+  - status: 200
+  save:
+    entry: <<json.entry>>
+
+- GET: /Patient?given=Winney,Rodrigo&_pretty=true
+  
+- AllPatientsById:
+  - GET: /Patient/<<resource.id>>
+    foreach: <<entry>>
+    save:
+      name: <<json.name>>
+
+- byName:
+  - GET: /Patient?given=<<given>>
+    foreach: <<name>>
+
+- call:
+    - AllPatientsById
+    - byName
+    
+
